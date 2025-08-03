@@ -30,29 +30,28 @@ export const Insurances = () => {
         getInsurances();
     }, [])
 
-
     return (
-        <div className='row'>
-            <div className='col md-4'>
-                <form onSubmit={handleSubmit} className="card card-body">
+        <form onSubmit={handleSubmit}>
+        <div className="row border-0 pt-5">
+            
+                {insurances.map(insurance => (
 
-                    <div>
-                        {insurances.map(insurance => (
-                            <div className="card p-2 m-2">
-                                <div className="card-body">
-                                    <h4 className="card-title">{insurance.name}</h4>
-                                    <p className="card-text">{insurance.description}</p>
-                                    <p className="card-text">{insurance.benefits}</p>
-                                </div>
-                                <button className="btn btn-primary btn-block">Comprar</button>
+                    <div key={insurance._id} className='col-4'>
+                        <div  className="card p-2 m-2">
+                            <h4 className="card-header text-center">{insurance.name} <span className="badge text-bg-success"> {insurance.value}</span></h4>
+                            <img src={`../assets/images/${insurance.image}`} className="card-img-top" alt={insurance.name}></img>
+                            <div className="card-body">
+                                <h5 className="card-title"><b>Tipo de Seguro: </b>{insurance.insurance_type}</h5>
+                                <p className="card-text"><b>Descripción: </b>{insurance.description}</p>
+                                <p className="card-text"><b>Beneficios: </b>{insurance.benefits}</p>
                             </div>
-                        ))}
+                            <button  className="btn btn-primary btn-block">Comprar</button>
+                        </div>
                     </div>
-                </form>
-            </div>
-            <div className="col md-8">
 
-            </div>
+                ))}
+            
         </div>
+        </form>
     )
 }

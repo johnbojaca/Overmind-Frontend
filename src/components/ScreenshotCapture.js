@@ -9,7 +9,7 @@ const ScreenshotCapture = ({ onCapture }) => {
   };
 
   return (
-    <button onClick={captureScreen}>Capture para ayuda</button>
+    <button className='btn btn-warning' onClick={captureScreen}>Capture para ayuda</button>
   );
 };
 

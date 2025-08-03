@@ -18,7 +18,7 @@ export const Shopcar = () => {
     }
 
     return (
-        <div className='row'>
+        <div className='row pt-5'>
             <div className='col md-4'>
                 <form onSubmit={handleSubmit} className="card card-body">
                     <div className="form-group">
